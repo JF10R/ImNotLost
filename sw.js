@@ -1,5 +1,5 @@
-// GeoPin Service Worker - Enables full offline capability
-const CACHE_NAME = 'geopin-v1';
+// ImNotLost Service Worker - Enables full offline capability
+const CACHE_NAME = 'imnotlost-v1';
 const ASSETS = [
   './',
   './index.html',

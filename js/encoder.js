@@ -1,5 +1,5 @@
 /**
- * GeoPin Encoder - Converts GPS coordinates to memorable 3-word + 2-digit codes
+ * ImNotLost Encoder - Converts GPS coordinates to memorable 3-word + 2-digit codes
  *
  * Encoding scheme:
  * - Total capacity: 2048^3 * 100 = 858,993,459,200 cells
@@ -18,7 +18,7 @@ const LAT_STEPS = 655360;
 const LNG_STEPS = 1310720;
 
 /**
- * Encode GPS coordinates to a GeoPin code
+ * Encode GPS coordinates to a location code
  * @param {number} lat - Latitude (-90 to 90)
  * @param {number} lng - Longitude (-180 to 180)
  * @returns {{ code: string, words: string[], digits: string }}
@@ -59,8 +59,8 @@ export function encode(lat, lng) {
 }
 
 /**
- * Decode a GeoPin code back to GPS coordinates
- * @param {string} code - GeoPin code (e.g., "forest-river-eagle-73")
+ * Decode a location code back to GPS coordinates
+ * @param {string} code - location code (e.g., "forest-river-eagle-73")
  * @returns {{ lat: number, lng: number } | null}
  */
 export function decode(code) {

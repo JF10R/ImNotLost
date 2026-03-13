@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#00d4aa">
-  <meta name="description" content="GPS-based emergency location app. Get your precise location as a memorable 3-word code. Works offline.">
-  <title>GeoPin - Emergency GPS Location</title>
+  <meta name="description" content="Works offline even in deep woods. Convert GPS coordinates to memorable 3-word codes for emergency communication. For hikers, hunters, outdoor safety.">
+  <title>ImNotLost - Emergency GPS Location</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="manifest" href="manifest.json">
 </head>
@@ -17,7 +17,7 @@
     <header class="header">
       <div class="logo">
         <div class="logo-icon">📍</div>
-        <h1>GeoPin</h1>
+        <h1>ImNotLost</h1>
       </div>
       <div class="status-badge">
         <span class="status-dot" id="gps-status-dot"></span>
@@ -25,9 +25,9 @@
       </div>
     </header>
 
-    <!-- GeoPin Code -->
+    <!-- Location Code -->
     <div class="geopin-card">
-      <div class="geopin-label">Your GeoPin</div>
+      <div class="geopin-label">Your Location Code</div>
       <div class="geopin-code" id="geopin-code">Waiting for GPS...</div>
       <div class="coordinates" id="coordinates">
         — <button class="coord-format-btn" id="btn-format">DD</button>
@@ -96,7 +96,7 @@
 
     <!-- Decode Section -->
     <div class="decode-section">
-      <div class="decode-title">Decode a GeoPin</div>
+      <div class="decode-title">Decode a Location Code</div>
       <div class="decode-row">
         <input type="text" class="decode-input" id="decode-input"
                placeholder="forest-river-eagle-73" autocomplete="off">
@@ -105,7 +105,7 @@
       <div id="decode-result" class="decode-result"></div>
     </div>
 
-    <div class="footer">GeoPin — Works offline with GPS satellites</div>
+    <div class="footer">ImNotLost — Works offline with GPS satellites</div>
   </div>
 
   <script type="module" src="js/app.js"></script>

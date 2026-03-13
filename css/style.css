@@ -1,4 +1,4 @@
-/* ─── GeoPin - GPS Emergency Location App ─── */
+/* ─── ImNotLost - GPS Emergency Location App ─── */
 
 :root {
   --bg: #0a0e17;
@@ -115,7 +115,7 @@ body {
   50% { opacity: 0.3; }
 }
 
-/* ─── GeoPin Code Card ─── */
+/* ─── Location Code Card ─── */
 .geopin-card {
   background: linear-gradient(135deg, #0f1a2e, #162040);
   border: 1px solid var(--border);

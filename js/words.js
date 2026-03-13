@@ -1,4 +1,4 @@
-// GeoPin Word List - 2048 common English words for location encoding
+// ImNotLost Word List - 2048 common English words for location encoding
 // Deterministic mapping: GPS coordinates -> 3 memorable words
 // Words selected for distinctiveness and ease of phone/radio communication
 

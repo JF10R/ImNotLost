@@ -1,5 +1,5 @@
 /**
- * GeoPin - GPS Emergency Location App
+ * ImNotLost - GPS Emergency Location App
  * Main application logic
  */
 
@@ -96,7 +96,7 @@ function updateDisplay() {
 
   const { lat, lng, accuracy, altitude, speed, heading, timestamp } = currentPosition;
 
-  // GeoPin code
+  // Location code
   const pin = encode(lat, lng);
   els['geopin-code'].textContent = pin.code;
   els['geopin-code'].classList.add('has-code');
@@ -189,7 +189,7 @@ async function copyToClipboard() {
 
   const pin = encode(currentPosition.lat, currentPosition.lng);
   const text = [
-    `GeoPin: ${pin.code}`,
+    `ImNotLost: ${pin.code}`,
     `GPS: ${currentPosition.lat.toFixed(6)}, ${currentPosition.lng.toFixed(6)}`,
     `Accuracy: ±${Math.round(currentPosition.accuracy)}m`,
     `Maps: https://maps.google.com/maps?q=${currentPosition.lat},${currentPosition.lng}`,
@@ -220,7 +220,7 @@ function shareLocation() {
   }
 
   const pin = encode(currentPosition.lat, currentPosition.lng);
-  const text = `EMERGENCY - My location:\nGeoPin: ${pin.code}\nGPS: ${currentPosition.lat.toFixed(6)}, ${currentPosition.lng.toFixed(6)}\nAccuracy: ±${Math.round(currentPosition.accuracy)}m\nMap: https://maps.google.com/maps?q=${currentPosition.lat},${currentPosition.lng}`;
+  const text = `EMERGENCY - My location:\nImNotLost: ${pin.code}\nGPS: ${currentPosition.lat.toFixed(6)}, ${currentPosition.lng.toFixed(6)}\nAccuracy: ±${Math.round(currentPosition.accuracy)}m\nMap: https://maps.google.com/maps?q=${currentPosition.lat},${currentPosition.lng}`;
 
   if (navigator.share) {
     navigator.share({ title: 'My GPS Location', text }).catch(() => {});
@@ -245,7 +245,7 @@ function sendSMS() {
 function callEmergency() {
   const confirmed = confirm(
     'This will dial emergency services (112/911).\n\n' +
-    'Your GeoPin location has been copied to clipboard.\n\n' +
+    'Your location code has been copied to clipboard.\n\n' +
     'Proceed with call?'
   );
 
@@ -280,7 +280,7 @@ function decodePinCode() {
       </div>`;
   } else {
     els['decode-result'].innerHTML =
-      '<div class="decode-error">Invalid GeoPin code. Format: word-word-word-00</div>';
+      '<div class="decode-error">Invalid code. Format: word-word-word-00</div>';
   }
 }
 

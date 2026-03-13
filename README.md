@@ -1,10 +1,10 @@
-# GeoPin - GPS Emergency Location App
+# ImNotLost - Emergency GPS Location App
 
-A GPS-based emergency location app that converts your precise satellite coordinates into a memorable **3-word + 2-digit code** — like What3Words, but built on actual GPS hardware positioning. Works offline, in the countryside, and deep in the woods.
+A GPS-based emergency location app that converts your precise satellite coordinates into a memorable **3-word + 2-digit code** — like What3Words, but open-source, offline-first, and built on actual GPS hardware positioning. Works deep in the woods, without cell signal.
 
 ## How It Works
 
-**GeoPin** uses your device's GPS satellite receiver (`enableHighAccuracy: true`) to get a precise fix, then encodes it as a short, speakable code:
+**ImNotLost** uses your device's GPS satellite receiver (`enableHighAccuracy: true`) to get a precise fix, then encodes it as a short, speakable code:
 
 ```
 forest-river-eagle-73
@@ -26,9 +26,9 @@ This code maps to a ~20-40m area anywhere on Earth — accurate enough for emerg
 - **Offline capable** — PWA with service worker; works after first load without internet
 - **Emergency call** — one-tap call to 112/911 with location auto-copied
 - **Share via SMS** — pre-formatted emergency message with coordinates + map link
-- **Copy to clipboard** — GeoPin code, GPS coords, accuracy, and Google Maps link
+- **Copy to clipboard** — location code, GPS coords, accuracy, and Google Maps link
 - **Native share** — uses Web Share API on supported devices
-- **Decode codes** — enter any GeoPin code to see its location on a map
+- **Decode codes** — enter any location code to see its position on a map
 - **Real-time stats** — accuracy, altitude, speed, compass heading
 - **Signal strength indicator** — visual GPS signal quality display
 - **Screen wake lock** — prevents screen from sleeping during tracking
@@ -45,14 +45,14 @@ This code maps to a ~20-40m area anywhere on Earth — accurate enough for emerg
 | Works without cell signal | No | Yes |
 | Works offline | No | Yes |
 
-GPS receivers talk directly to satellites — no cell network needed. GeoPin forces `enableHighAccuracy: true` to ensure the GPS chip is used instead of falling back to cell/wifi positioning.
+GPS receivers talk directly to satellites — no cell network needed. ImNotLost forces `enableHighAccuracy: true` to ensure the GPS chip is used instead of falling back to cell/wifi positioning.
 
 ## Quick Start
 
 1. Open `index.html` in any modern browser
 2. Allow location permission when prompted
 3. Wait for GPS fix (may take 10-30 seconds outdoors)
-4. Your GeoPin code appears — share it in an emergency
+4. Your location code appears — share it in an emergency
 
 ### Serve locally (for HTTPS required by some browsers):
 
@@ -67,7 +67,7 @@ npx serve .
 ## Project Structure
 
 ```
-gps-emergency-app/
+ImNotLost/
 ├── index.html          # App shell
 ├── manifest.json       # PWA manifest
 ├── sw.js               # Service worker (offline support)
@@ -75,7 +75,7 @@ gps-emergency-app/
 │   └── style.css       # Dark theme, mobile-first
 ├── js/
 │   ├── app.js          # Main app logic (GPS, UI, sharing)
-│   ├── encoder.js      # Coordinate ↔ GeoPin encoding/decoding
+│   ├── encoder.js      # Coordinate ↔ location code encoding/decoding
 │   └── words.js        # 2048-word list for location codes
 └── README.md
 ```
